@@ -1,0 +1,11 @@
+[Unit]
+Description=Runs fb_text_scroll example program on boot. See /usr/src/fb_text_scroll for source/details.
+After=udev-finish.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fb_text_scroll /home/pi/Documents/fb_text_scroll_message.txt
+ExecStop=killall fb_text_scroll
+
+[Install]
+WantedBy=multi-user.target
